@@ -1,0 +1,250 @@
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: #fff;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.2;
+  font-weight: 300;
+}
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+button {
+  cursor: pointer;
+}
+ul li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+p {
+  width: auto;
+}
+
+.body {
+  display: flex;
+  min-height: 100vh;
+  padding: 10px 40px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(194, 129, 89);
+}
+
+.wrapper {
+  display: flex;
+  width: 1200px;
+  padding: 80px 20px;
+  border-radius: 20px;
+  align-items: center;
+  gap: 60px;
+  background-color: #fff;
+}
+
+.gallows {
+  text-align: center;
+}
+
+.gallows__img {
+  width: 500px;
+}
+
+.gallows__title {
+  font-size: 3rem;
+  margin-top: 10%;
+}
+
+.gallows__title span {
+  color: orange;
+}
+
+.quiz {
+  width: 100%;
+  font-size: 2rem;
+}
+
+.quiz__word {
+  display: flex;
+  justify-content: center;
+  max-width: 700px;
+  margin: 50px 0;
+  gap: 10px;
+}
+
+.quiz__letter {
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  width: 38px;
+  border-bottom: 3px solid black;
+}
+
+.guessed {
+  margin-bottom: -5px;
+  border-color: transparent;
+}
+
+.quiz__guesses b {
+  color: rgb(124, 101, 59);
+  margin-left: 5px;
+}
+
+.quiz__guesses:nth-child(2) {
+}
+
+.quiz__guesses:nth-child(3) {
+  margin: 20px 0 100px;
+}
+
+.quiz__keyboard {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.quiz__keyboard button {
+  width: calc(100% / 9 - 5px);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 6px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: orange;
+  transition: opacity 0.3s;
+}
+
+.quiz__keyboard button:hover {
+  opacity: 0.6;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.modal__wrappper {
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.modal__wrappper.active {
+  display: flex;
+}
+
+.modal {
+  display: none;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 500px;
+  height: 400px;
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal__title {
+  font-size: 5rem;
+  color: orange;
+}
+.modal__text {
+  font-size: 2.5rem;
+  margin: 30px 0 70px;
+}
+
+.modal__text b {
+  color: orange;
+}
+
+.modal__btn {
+  color: #fff;
+  border-radius: 5px;
+  background: orange;
+  padding: 20px 15px;
+  font-size: 1.75rem;
+  transition: 0.3s;
+}
+
+.modal__btn:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 1100px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallows__img {
+    max-width: 300px;
+  }
+
+  .gallows h1 {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    max-width: 330px;
+    padding: 30px 10px;
+  }
+
+  .gallows__img {
+    max-width: 250px;
+  }
+
+  .quiz__guesses,
+  .quiz__letter,
+  .quiz__keyboard button {
+    font-size: 1rem;
+  }
+
+  .modal {
+    width: 400px;
+    height: 600px;
+  }
+}
